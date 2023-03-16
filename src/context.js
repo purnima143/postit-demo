@@ -4,8 +4,8 @@ const AppContext = React.createContext();
 const AppProvider = ({ children }) => {
   const [posts, setPosts] = useState([]);
   const [selected, setSelected] = useState("");
-  const [savelist, setSavelist] = useState(
-    JSON.parse(localStorage.getItem("savelist")) || []
+  const [favouritelist, setFavouritelist] = useState(
+    JSON.parse(localStorage.getItem("favouritelist")) || []
   );
   const user =
     localStorage.getItem("user") !== "undefined"
@@ -20,26 +20,26 @@ const AppProvider = ({ children }) => {
     return response.data;
   };
 
-  const handleSave = (post) => {
+  const handleFavourite = (post) => {
     setSelected(post.id);
     let newobj = post;
-    let mynewarr = [...savelist, newobj];
+    let mynewarr = [...favouritelist, newobj];
     // let uniqueSet = [...new Set(mynewarr)];
 
     const arrayUniqueByKey = [
       ...new Map(mynewarr.map((item) => [item["id"], item])).values(),
     ];
-    setSavelist(arrayUniqueByKey);
-    localStorage.setItem("savelist", JSON.stringify(arrayUniqueByKey));
+    setFavouritelist(arrayUniqueByKey);
+    localStorage.setItem("favouritelist", JSON.stringify(arrayUniqueByKey));
   };
   return (
     <AppContext.Provider
       value={{
         posts,
         fetchPosts,
-        handleSave,
-        setSavelist,
-        savelist,
+        handleFavourite,
+        setFavouritelist,
+        favouritelist,
         selected,
         user,
       }}

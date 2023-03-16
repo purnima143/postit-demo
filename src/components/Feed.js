@@ -21,7 +21,7 @@ function Feed() {
           <Button
             className="m-2"
             style={{ background: "black" }}
-            onClick={() => navigate("/savepost")}
+            onClick={() => navigate("/favouritepost")}
           >
             Your favourite post
           </Button>

@@ -2,16 +2,16 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Post } from "./index";
 import { useGlobalContext } from "../context";
-function SavePost() {
-  const { savelist } = useGlobalContext();
+function FavouritePost() {
+  const { favouritelist } = useGlobalContext();
   return (
     <Container>
       <Row>
         <h3>My favourite posts⭐</h3>
-        {savelist &&
-          savelist.map((post) => {
+        {favouritelist &&
+          favouritelist.map((post) => {
             return (
-              <Col md="6" key={post.id} className="savePost">
+              <Col md="6" key={post.id} className="favouritePost">
                 <Post post={post} />
               </Col>
             );
@@ -21,4 +21,4 @@ function SavePost() {
   );
 }
 
-export default SavePost;
+export default FavouritePost;
