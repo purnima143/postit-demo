@@ -7,6 +7,7 @@ const AppProvider = ({ children }) => {
   const [favouritelist, setFavouritelist] = useState(
     JSON.parse(localStorage.getItem("favouritelist")) || []
   );
+
   const user =
     localStorage.getItem("user") !== "undefined"
       ? JSON.parse(localStorage.getItem("user"))
@@ -24,8 +25,6 @@ const AppProvider = ({ children }) => {
     setSelected(post.id);
     let newobj = post;
     let mynewarr = [...favouritelist, newobj];
-    // let uniqueSet = [...new Set(mynewarr)];
-
     const arrayUniqueByKey = [
       ...new Map(mynewarr.map((item) => [item["id"], item])).values(),
     ];

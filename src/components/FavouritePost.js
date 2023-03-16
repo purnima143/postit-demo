@@ -8,14 +8,17 @@ function FavouritePost() {
     <Container>
       <Row>
         <h3>My favourite posts⭐</h3>
-        {favouritelist &&
+        {favouritelist.length > 0 ? (
           favouritelist.map((post) => {
             return (
               <Col md="6" key={post.id} className="favouritePost">
                 <Post post={post} />
               </Col>
             );
-          })}
+          })
+        ) : (
+          <h5>No list</h5>
+        )}
       </Row>
     </Container>
   );
