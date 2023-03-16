@@ -28,8 +28,10 @@ const AppProvider = ({ children }) => {
     const arrayUniqueByKey = [
       ...new Map(mynewarr.map((item) => [item["id"], item])).values(),
     ];
-    setFavouritelist(arrayUniqueByKey);
-    localStorage.setItem("favouritelist", JSON.stringify(arrayUniqueByKey));
+    if (user) {
+      setFavouritelist(arrayUniqueByKey);
+      localStorage.setItem("favouritelist", JSON.stringify(arrayUniqueByKey));
+    }
   };
   return (
     <AppContext.Provider
