@@ -17,18 +17,12 @@ function Header() {
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
           <Navbar.Text>
-            Signed in as:{" "}
+            Signed in as:
             <a href={`/userprofile/${user?.uid}`}>{user?.displayName}</a>
           </Navbar.Text>
-          {user ? (
-            <Button className="whiteBtn mx-2" onClick={logout}>
-              Logout
-            </Button>
-          ) : (
-            <Button className="whiteBtn mx-2" onClick={logout}>
-              Login
-            </Button>
-          )}
+          <Button className="whiteBtn mx-2" onClick={logout}>
+            {user ? "Logout" : "Login"}
+          </Button>
         </Navbar.Collapse>
       </Container>
     </Navbar>

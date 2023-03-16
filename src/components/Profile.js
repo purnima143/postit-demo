@@ -10,7 +10,6 @@ function Profile() {
       <div className="profileBox m-auto py-5">
         {user ? (
           <>
-            {" "}
             <div
               className="userPic m-auto"
               style={{ backgroundImage: `url("${user?.photoURL}")` }}
