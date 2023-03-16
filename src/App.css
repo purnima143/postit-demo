@@ -1,38 +1,61 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+body {
+  background-color: rgb(253, 249, 255) !important;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.postBox {
+  background-color: white;
+  height: fit-content;
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 10px;
+}
+.postTitle {
+  font-size: 1.35rem;
+  font-weight: bold;
+}
+.saveBtn {
+  background-color: rgb(247, 240, 203) !important;
+  outline: none;
+  border: none !important;
+}
+.userPic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-size: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.userName {
+  font-weight: bold;
+  font-size: 1.3rem;
+}
+.profileBox {
+  background-color: white;
+  width: 25%;
+}
+.selectedBtn {
+  background-color: rgb(43, 43, 43) !important;
+}
+.savePost button {
+  display: none;
+}
+.whiteBtn {
+  background-color: white !important;
+  color: black !important;
+  border: none !important;
+}
+.blackBtn {
+  background-color: black !important;
+  color: white !important;
+  border: none !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media screen and (max-width: 600px) {
+  .profileBox {
+    width: 100% !important;
   }
 }
