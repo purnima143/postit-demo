@@ -12,16 +12,7 @@ function Login() {
     });
   };
   return (
-    <div
-      style={{
-        height: "100vh",
-        background: "white",
-        display: "flex",
-        flex: "column",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    <div className="loginPage">
       <Button className="blackBtn" onClick={handleClick}>
         Sign in with google
       </Button>
