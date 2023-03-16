@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Post from "./Post";
+import { Post } from "./index";
 import { useGlobalContext } from "../context";
 function SavePost() {
   const { savelist } = useGlobalContext();

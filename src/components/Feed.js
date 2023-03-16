@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Post from "./Post";
+import { Post } from "./index";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { useGlobalContext } from "../context";
 import { useNavigate } from "react-router-dom";

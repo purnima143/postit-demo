@@ -1,7 +1,5 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
-import Button from "react-bootstrap/Button";
+import { Container, Navbar, Button } from "react-bootstrap";
 import { useGlobalContext } from "../context";
 import { useNavigate } from "react-router-dom";
 function Header() {
@@ -22,9 +20,15 @@ function Header() {
             Signed in as:{" "}
             <a href={`/userprofile/${user?.uid}`}>{user?.displayName}</a>
           </Navbar.Text>
-          <Button className="whiteBtn mx-2" onClick={logout}>
-            Logout
-          </Button>
+          {user ? (
+            <Button className="whiteBtn mx-2" onClick={logout}>
+              Logout
+            </Button>
+          ) : (
+            <Button className="whiteBtn mx-2" onClick={logout}>
+              Login
+            </Button>
+          )}
         </Navbar.Collapse>
       </Container>
     </Navbar>
